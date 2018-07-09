@@ -23,5 +23,18 @@ e com o comando npm start o nodemon automaticamente sera carregado
 
 npm install socket.io --save
 
-5-
+5-do lado servidor configurar o socket.io
+
+
+var io = require('socket.io').listen(server);
+io.on('connection', function(socket){
+  console.log('a user connected')
+})
+
+repare que ele passe o server no metodo listen que é o objetdo express.
+ou seja você deve configurar o socket.io no seu arquivo onde você levanta o servidor express,
+logo após o metodo createServer
+
+
+
 
