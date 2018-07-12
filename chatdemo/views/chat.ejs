@@ -16,14 +16,27 @@
       <ul id="messages"></ul>
      
           
-      <form action="">
+      <form action="" id="">
         <input id="m" autocomplete="off" /><button>Send</button>
       </form>
       <script src='/socket.io/socket.io.js'></script>
       <script>
-        var socket = io()
+        
 
-
+       
+        let socket = io('http://localhost:3000')
+        meuForm =  document.querySelector('form')
+        meuForm.addEventListener('submit', function(e){
+          //e.preventDefault()
+         
+          dados =  document.getElementById('m').value
+        
+          socket.emit('chat message', dados)
+         return;
+                  
+        })
+       
+        
       </script>
     </body>
   </html>
