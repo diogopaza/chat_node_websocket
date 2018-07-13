@@ -13,6 +13,8 @@
       </style>
     </head>
     <body>
+     
+      <h2 id='total'>Total de usuários no chat: </h2>
       <ul id="messages"></ul>
      
           
@@ -42,6 +44,13 @@
           minhasMensagens = document.getElementById('messages').innerHTML += '<li>' + msg + '<li>'
          
         })
+
+        socket.on('totClientes', function(total){
+        
+         
+           document.getElementById('total').innerHTML = 'Tota de usuários no chat: ' + total
+          
+        } )
         
       </script>
     </body>
